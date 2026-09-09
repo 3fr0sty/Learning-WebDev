@@ -1,0 +1,31 @@
+body {
+    background-color: grey;
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 0.5em;
+    border: solid;
+    border-color: darkgrey;
+    border-width: 6px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5em;
+    margin-right: 2em;
+}
+
+header nav ul li {
+    background-color: grey;
+    border: solid;
+    border-color: whitesmoke;
+    border-radius: 5px;
+    padding: 5px;
+}
