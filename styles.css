@@ -1,0 +1,75 @@
+body {
+    background-color: grey;
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 0.5em;
+    border: solid;
+    border-color: darkgrey;
+    border-width: 6px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5em;
+    margin-right: 2em;
+}
+
+header nav ul li {
+    background-color: grey;
+    border: solid;
+    border-color: whitesmoke;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.maintenance_message {
+    background-color: orangered;
+    border: solid;
+    border-width: 6px;
+    border-color: rgb(247, 2, 2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+    padding: 1em;
+}
+
+.maintenance_text {
+    text-align: left;
+    font-family: sans-serif;
+}
+
+.maintenance_message img {
+    max-width: 200px;
+    border-radius: 2em;
+    border: dotted;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+
+.content h1 {
+    border: solid;
+    border-width: 10px;
+    border-color: rgb(1, 9, 85);
+    text-align: center;
+    padding: 1em;
+    border-radius: 1em;
+    align-self: center;
+}
