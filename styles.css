@@ -1,6 +1,6 @@
 body {
     background-color: grey;
-    background-image: url("images/wallpaper.png");
+    background-image: url("images/goodison-park.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -76,7 +76,7 @@ header nav ul a:hover {
     display: flex;
     flex-direction: column;
     font-family: sans-serif;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .content h1 {
@@ -120,4 +120,16 @@ header nav ul a:hover {
 
 .get_in_touch button:hover {
     background-color: darkblue;
+}
+
+.listone {
+    background-color: rgba(0, 255, 255, 0.25);
+    border: 1px solid;
+    border-radius: 2px;
+    align-items: center
+}
+
+.listone .li {
+    color: black;
+    font-family: sans-serif;;
 }
