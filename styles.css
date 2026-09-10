@@ -1,9 +1,14 @@
 body {
     background-color: grey;
+    background-image: url("images/goodison-park.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 header {
-    background-color: black;
+    background:linear-gradient(to right, black,darkblue);
     color: white;
     padding: 0.5em;
     border: solid;
@@ -34,8 +39,17 @@ header nav ul li {
     padding: 5px;
 }
 
+header nav ul a {
+    color: white;
+    text-decoration: none;
+}
+
+header nav ul a:hover {
+    color: orange;
+}
+
 .maintenance_message {
-    background-color: orangered;
+    background: linear-gradient(to right, orangered, orange);
     border: solid;
     border-width: 6px;
     border-color: rgb(247, 2, 2);
@@ -62,6 +76,7 @@ header nav ul li {
     display: flex;
     flex-direction: column;
     font-family: sans-serif;
+    color: rgb(0, 0, 0);
 }
 
 .content h1 {
@@ -72,4 +87,72 @@ header nav ul li {
     padding: 1em;
     border-radius: 1em;
     align-self: center;
+    background: radial-gradient(circle, lightgrey,black);
+    -webkit-text-stroke: 1px black;
+}
+
+.content .get_in_touch {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    max-width: 300px;
+    padding: 1em;
+    border-radius: 0.5em;
+    gap: 0.5em;
+}
+
+.get_in_touch input,
+.get_in_touch textarea {
+    padding: 0.5em;
+    border: 1px solid darkgray;
+    border-radius: 0.3em;
+    font-family: sans-serif;
+}
+
+.get_in_touch button {
+    padding: 0.5em;
+    background-color: rgb(1, 9, 85);
+    color: white;
+    border: none;
+    border-radius: 0.3em;
+    cursor: pointer;
+}
+
+.get_in_touch button:hover {
+    background-color: darkblue;
+}
+
+.listone {
+    background-color: rgba(0, 255, 255, 0.25);
+    border: 1px solid;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.listone ul {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+.listone li {
+    color: black;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.test_button {
+    text-align: center;
+    padding-top: 2em;
+}
+.test_button button {
+    padding: 0.5em;
+    background-color: rgb(1, 9, 85);
+    color: white;
+    border: 2px solid;
+    border-radius: 0.3em;
+    cursor: pointer;
+    border-color: rgb(72, 72, 73);
+    height: 100px;
+    width: 200px;
+    font-size: 1.5em;
 }
