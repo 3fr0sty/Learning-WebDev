@@ -1,6 +1,6 @@
 body {
     background-color: grey;
-    background-image: url("../images/goodison-park.jpg");
+    background-image: url("../images/wallpaper.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -42,6 +42,7 @@ header nav ul li {
 header nav ul a {
     color: white;
     text-decoration: none;
+    font-family: sans-serif;
 }
 
 header nav ul a:hover {
@@ -99,6 +100,7 @@ header nav ul a:hover {
     padding: 1em;
     border-radius: 0.5em;
     gap: 0.5em;
+    margin-top: 1.5em;
 }
 
 .get_in_touch input,
@@ -155,4 +157,23 @@ header nav ul a:hover {
     height: 100px;
     width: 200px;
     font-size: 1.5em;
+}
+
+.test_button button:hover {
+    color: grey;
+}
+
+.goodison_park {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.goodison_park img {
+    border: 3px;
+    border-style:groove;
+    border-color: navy;
+    border-radius: 10px;
+    height: 300px;
+    width: 600px;
 }
