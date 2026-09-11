@@ -124,6 +124,72 @@ header nav ul a:hover {
     background-color: darkblue;
 }
 
+.content .login_box {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    max-width: 300px;
+    padding: 1.5em;
+    border-radius: 0.5em;
+    gap: 0.5em;
+    margin: 1.5em auto 0;
+}
+
+.login_box input {
+    padding: 0.5em;
+    border: 1px solid darkgray;
+    border-radius: 0.3em;
+    font-family: sans-serif;
+}
+
+.login_box button {
+    padding: 0.5em;
+    background-color: rgb(1, 9, 85);
+    color: white;
+    border: none;
+    border-radius: 0.3em;
+    cursor: pointer;
+    margin-top: 0.5em;
+}
+
+.login_box button:hover {
+    background-color: darkblue;
+}
+
+.content .signup_box {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    max-width: 300px;
+    padding: 1.5em;
+    border-radius: 0.5em;
+    gap: 0.5em;
+    margin: 1.5em auto 0;
+}
+
+.signup_box input {
+    padding: 0.5em;
+    border: 1px solid darkgray;
+    border-radius: 0.3em;
+    font-family: sans-serif;
+}
+
+.signup_box button {
+    padding: 0.5em;
+    background-color: rgb(1, 9, 85);
+    color: white;
+    border: none;
+    border-radius: 0.3em;
+    cursor: pointer;
+    margin-top: 0.5em;
+}
+
+.signup_box button:hover {
+    background-color: darkblue;
+}
+
+
+
 .listone {
     background-color: rgba(0, 255, 255, 0.25);
     border: 1px solid;
