@@ -1,0 +1,179 @@
+body {
+    background-color: grey;
+    background-image: url("../images/wallpaper.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+header {
+    background:linear-gradient(to right, black,darkblue);
+    color: white;
+    padding: 0.5em;
+    border: solid;
+    border-color: darkgrey;
+    border-width: 6px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5em;
+    margin-right: 2em;
+}
+
+header nav ul li {
+    background-color: grey;
+    border: solid;
+    border-color: whitesmoke;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+header nav ul a {
+    color: white;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+header nav ul a:hover {
+    color: orange;
+}
+
+.maintenance_message {
+    background: linear-gradient(to right, orangered, orange);
+    border: solid;
+    border-width: 6px;
+    border-color: rgb(247, 2, 2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+    padding: 1em;
+}
+
+.maintenance_text {
+    text-align: left;
+    font-family: sans-serif;
+}
+
+.maintenance_message img {
+    max-width: 200px;
+    border-radius: 2em;
+    border: dotted;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    color: rgb(0, 0, 0);
+}
+
+.content h1 {
+    border: solid;
+    border-width: 10px;
+    border-color: rgb(1, 9, 85);
+    text-align: center;
+    padding: 1em;
+    border-radius: 1em;
+    align-self: center;
+    background: radial-gradient(circle, lightgrey,black);
+    -webkit-text-stroke: 1px black;
+}
+
+.content .get_in_touch {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    max-width: 300px;
+    padding: 1em;
+    border-radius: 0.5em;
+    gap: 0.5em;
+    margin-top: 1.5em;
+}
+
+.get_in_touch input,
+.get_in_touch textarea {
+    padding: 0.5em;
+    border: 1px solid darkgray;
+    border-radius: 0.3em;
+    font-family: sans-serif;
+}
+
+.get_in_touch button {
+    padding: 0.5em;
+    background-color: rgb(1, 9, 85);
+    color: white;
+    border: none;
+    border-radius: 0.3em;
+    cursor: pointer;
+}
+
+.get_in_touch button:hover {
+    background-color: darkblue;
+}
+
+.listone {
+    background-color: rgba(0, 255, 255, 0.25);
+    border: 1px solid;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.listone ul {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+.listone li {
+    color: black;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.test_button {
+    text-align: center;
+    padding-top: 2em;
+}
+.test_button button {
+    padding: 0.5em;
+    background-color: rgb(1, 9, 85);
+    color: white;
+    border: 2px solid;
+    border-radius: 0.3em;
+    cursor: pointer;
+    border-color: rgb(72, 72, 73);
+    height: 100px;
+    width: 200px;
+    font-size: 1.5em;
+}
+
+.test_button button:hover {
+    color: grey;
+}
+
+.goodison_park {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.goodison_park img {
+    border: 3px;
+    border-style:groove;
+    border-color: navy;
+    border-radius: 10px;
+    height: 300px;
+    width: 600px;
+}
