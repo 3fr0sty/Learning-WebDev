@@ -12,22 +12,24 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><a href="signup.html">Signup</a></li>
                     <li><a href="login.html" id="loginLink">Login</a></li>
                     <li id="signOutItem" hidden><a href="index.html" id="signOut">Sign Out</a></li>
                 </ul>
             </nav>
         </header>
         <div class="content">
-            <h1>Home</h1>
-            <div class="listone">
-            <h3>Who am I?</h3>
-            <h4 id="welcomeMessage" hidden></h4>
-            <ul>
-                <li>I am Walter Heartwell White.</li>
-                <li>I live at 308 Negra Aroya Lane, Alberquerque, New Mexico.</li>
-                <li>This is my confession.</li>
-            </ul>
-            </div>
+            <h1>Login</h1>
+            <form id="loginForm" class="login_box" method="POST">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Your username">
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Your password">
+
+                <button type="submit">Log In</button>
+                <p id="loginMessage" hidden></p>
+            </form>
         </div>
         <script src="../JS/scripts.js"></script>
     </body>
