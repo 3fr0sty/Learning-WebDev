@@ -49,30 +49,6 @@ header nav ul a:hover {
     color: orange;
 }
 
-.maintenance_message {
-    background: linear-gradient(to right, orangered, orange);
-    border: solid;
-    border-width: 6px;
-    border-color: rgb(247, 2, 2);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1em;
-    padding: 1em;
-}
-
-.maintenance_text {
-    text-align: left;
-    font-family: sans-serif;
-}
-
-.maintenance_message img {
-    max-width: 200px;
-    border-radius: 2em;
-    border: dotted;
-}
-
 .content {
     display: flex;
     flex-direction: column;

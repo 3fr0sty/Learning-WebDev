@@ -93,21 +93,26 @@ if (signOutButton) {
     });
 }
 
-let loginLink = document.getElementById("loginLink")
-let welcomeMessage = document.getElementById("welcomeMessage")
-if (welcomeMessage) {
+let loginLink = document.getElementById("loginLink");
+let welcomeMessage = document.getElementById("welcomeMessage");
+if (loginLink) {
     fetch("/whoami")
-    .then(function(response) {
-        return response.json()
-    })
-    .then(function(data) {
-        if (data.logged_in_as) {
-            let user = data.logged_in_as
-            welcomeMessage.textContent = "Welcome, " + user;
-            loginLink.textContent = "Logged in as " + user;
-            welcomeMessage.hidden = false
-            signOutButton.hidden = false
-        }
-    });
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            if (data.logged_in_as) {
+                let user = data.logged_in_as;
+                loginLink.textContent = "Logged in as " + user;
+                let signOutItem = document.getElementById("signOutItem");
+                if (signOutItem) {
+                    signOutItem.hidden = false;
+                }
+                if (welcomeMessage) {
+                    welcomeMessage.textContent = "Welcome, " + user;
+                    welcomeMessage.hidden = false;
+                }
+            }
+        });
 }
 
