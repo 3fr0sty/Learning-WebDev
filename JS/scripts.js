@@ -94,6 +94,7 @@ if (signOutButton) {
 }
 
 let loginLink = document.getElementById("loginLink");
+let signupItem = document.getElementById("signupItem");
 let welcomeMessage = document.getElementById("welcomeMessage");
 if (loginLink) {
     fetch("/whoami")
@@ -107,6 +108,9 @@ if (loginLink) {
                 let signOutItem = document.getElementById("signOutItem");
                 if (signOutItem) {
                     signOutItem.hidden = false;
+                }
+                if (signupItem) {
+                    signupItem.hidden = true;
                 }
                 if (welcomeMessage) {
                     welcomeMessage.textContent = "Welcome, " + user;
