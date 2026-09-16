@@ -5,6 +5,7 @@
     font-style: normal;
 }
 
+
 body {
     background-color: grey;
     background-image: url("../images/saulGoodmanAndAssociates.jpg");
@@ -12,6 +13,12 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-image: url("../images/wallpaper.png");
+    }
 }
 
 header {
