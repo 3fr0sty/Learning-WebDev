@@ -149,6 +149,10 @@ header nav ul a:hover {
     background-color: darkblue;
 }
 
+.login_box[hidden] {
+    display: none;
+}
+
 .content .signup_box {
     display: flex;
     flex-direction: column;

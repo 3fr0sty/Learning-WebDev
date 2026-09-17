@@ -120,3 +120,18 @@ if (loginLink) {
         });
 }
 
+let alreadyLoggedInMessage = document.getElementById("alreadyLoggedInMessage");
+if (alreadyLoggedInMessage) {
+    fetch("/whoami")
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function(data) {
+            if (data.logged_in_as) {
+                let user = data.logged_in_as;
+                alreadyLoggedInMessage.textContent = "You are already logged in as " + user;
+                alreadyLoggedInMessage.hidden = false;
+                document.getElementById("loginForm").hidden = true;
+            }
+        })
+};

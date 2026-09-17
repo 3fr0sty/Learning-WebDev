@@ -23,7 +23,16 @@ def init_db():
     conn.commit()
     conn.close()
 
-# --- Static page routes: just hand back the matching HTML file ---
+# Security Headers: only load scripts, styles, images from this origin, nothing else, and no inline scripts
+@app.after_request
+def add_security_headers(response):
+    response.headers["Content-Security-Policy"] = "default-src 'self'; frame-src https://www.youtube.com/ "
+    return response
+
+
+
+
+# Static page routes: just hand back the matching HTML file
 
 @app.route("/")
 def home():
@@ -32,6 +41,7 @@ def home():
 @app.route("/index.html")
 def index():
     return app.send_static_file("HTML/index.html")
+
 
 @app.route("/about.html")
 def about():
