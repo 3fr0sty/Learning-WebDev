@@ -22,11 +22,11 @@ body {
 }
 
 header {
-    background:linear-gradient(to right, rgb(255, 0, 0),rgb(252, 76, 76));
-    color: yellow;
+    background:linear-gradient(to right, rgb(134, 0, 0),rgb(248, 0, 0));
+    color: rgb(189, 189, 0);
     padding: 0.5em;
     border: solid;
-    border-color: yellow;
+    border-color: rgb(235, 235, 0);
     border-width: 6px;
     border-radius: 10px;
     display: flex;
@@ -246,4 +246,20 @@ header nav ul a:hover {
     width: 400px;
     border: 0.3em solid yellow;
     border-radius: 0.75em;
+}
+
+.already_logged_in {
+    display: flex;
+    flex-direction: column;
+}
+
+#alreadyLoggedInMessage {
+    display: flex;
+    background-color: hsl(0, 100%, 17.8%,0.66);
+    padding: 1em;
+    border-radius: 12px;
+    border: solid 10px;
+    border-color: hsl(57.8, 100%, 32.7%,0.66);
+    justify-self: center;
+    font-family: Arial, Helvetica, sans-serif;
 }

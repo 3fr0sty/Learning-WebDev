@@ -48,6 +48,7 @@ if (signupForm) {
             .then(function (data) {
                 message.textContent = data.message;
                 message.hidden = false;
+                
             });
     });
 }
@@ -77,21 +78,21 @@ if (loginForm) {
     });
 }
 
-let signOutButton = document.getElementById("signOut")
-if (signOutButton) {
+let signOutButtons = document.querySelectorAll("#signOut, #signOutAlreadyLoggedIn");
+signOutButtons.forEach(function (signOutButton) {
     signOutButton.addEventListener("click", function (event) {
-        event.preventDefault()
+        event.preventDefault();
         fetch("/signout")
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(data) {
-            if (data.sign_out_success) {
-                window.location.href = "index.html";
-            }
-       });
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                if (data.sign_out_success) {
+                    window.location.href = "index.html";
+                }
+            });
     });
-}
+});
 
 let loginLink = document.getElementById("loginLink");
 let signupItem = document.getElementById("signupItem");
