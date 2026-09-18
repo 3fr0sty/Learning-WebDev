@@ -17,12 +17,25 @@ if (form) {
     let message = document.getElementById("formMessage");
     form.addEventListener("submit", function (event) {
         event.preventDefault();
-        let name = document.getElementById("name").value;
-        message.textContent = "Thank you " + name;
+        fetch("/whoami")
+            .then(function (response){ 
+                return response.json()
+            })
+            .then(function (data){
+                let typedName = document.getElementById("name").value;
+                let displayName;
+
+                if (data.logged_in_as) {
+                    displayName = data.logged_in_as;
+                } else {
+                    displayName = typedName;
+                }
+
+        message.textContent = "Thank you " + displayName;
         message.hidden = false;
     });
-}
-
+});
+};
 // --- Signup page: check passwords match client-side, then POST to /signup.html ---
 let signupForm = document.getElementById("signupForm");
 if (signupForm) {

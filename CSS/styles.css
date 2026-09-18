@@ -7,7 +7,7 @@
 
 
 body {
-    background-color: grey;
+    background-color: #0D0D0D;
     background-image: url("../images/saulGoodmanAndAssociates.jpg");
     background-size: cover;
     background-position: center;
@@ -22,11 +22,11 @@ body {
 }
 
 header {
-    background:linear-gradient(to right, rgb(134, 0, 0),rgb(248, 0, 0));
-    color: rgb(189, 189, 0);
+    background:linear-gradient(to right, #D91828,#D9183B);
+    color: #F2D230;
     padding: 0.5em;
     border: solid;
-    border-color: rgb(235, 235, 0);
+    border-color: #F2D230;
     border-width: 6px;
     border-radius: 10px;
     display: flex;
@@ -36,6 +36,7 @@ header {
 
 header h1 {
     font-family: "Script1 Casual", cursive;
+    -webkit-text-stroke: 0.3px #0D0D0D;
 }
 
 header nav ul {
@@ -71,17 +72,17 @@ header nav ul a:hover {
 }
 
 .content h1 {
-    color: yellow;
+    color: #F2D230;
     border: solid;
     border-width: 10px;
-    border-color: rgb(247, 231, 6);
+    border-color: #F2D230;
     font-family: "Script1 Casual", cursive;
     text-align: center;
     padding: 1em;
     border-radius: 1em;
     align-self: center;
     background: radial-gradient(circle, lightgrey,rgb(243, 4, 16));
-    -webkit-text-stroke: 1px black;
+    -webkit-text-stroke: 0.3px black;
 }
 
 .content .get_in_touch {
@@ -188,7 +189,7 @@ header nav ul a:hover {
 
 
 .listone {
-    background-color: rgba(255, 38, 38, 0.514);
+    background-color: rgba(217, 24, 40, 0.514);
     border: 1px solid;
     border-radius: 2px;
     text-align: center;
