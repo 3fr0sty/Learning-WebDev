@@ -5,262 +5,286 @@
     font-style: normal;
 }
 
-
-body {
-    background-color: #0D0D0D;
-    background-image: url("../images/saulGoodmanAndAssociates.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+:root {
+    --color-primary: #d9183b;
+    --color-secondary: #73192a;
+    --color-accent: #f2e52e;
+    --color-highlight: #f2d230;
+    --color-background: #0d0d0d;
+    --color-text: #ffffff;
+    --color-card: #ffffff;
+    --color-card-text: #000000;
+    --color-input-border: #5a5a5a;
+    --color-button: var(--color-secondary);
+    --color-button-hover: var(--color-primary);
+    --color-overlay: rgb(13 13 13 / 85%);
+    --content-width: 900px;
+    --page-padding: clamp(1rem, 3vw, 2rem);
 }
 
-@media (prefers-color-scheme: light) {
-    body {
-        background-image: url("../images/wallpaper.png");
-    }
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-width: 320px;
+}
+
+body {
+    position: relative;
+    isolation: isolate;
+    min-height: 100vh;
+    margin: 0;
+    padding: var(--page-padding);
+    background-color: var(--color-background);
+    background-image: url("../images/saulGoodmanAndAssociates.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: var(--color-text);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+body::before {
+    position: fixed;
+    z-index: -1;
+    inset: 0;
+    content: "";
+    background-color: var(--color-overlay);
+}
+
+header,
+.content,
+.already_logged_in {
+    position: relative;
+    z-index: 1;
+    width: min(100%, var(--content-width));
+    margin-inline: auto;
 }
 
 header {
-    background:linear-gradient(to right, #D91828,#D9183B);
-    color: #F2D230;
-    padding: 0.5em;
-    border: solid;
-    border-color: #F2D230;
-    border-width: 6px;
-    border-radius: 10px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    gap: 1rem 2rem;
+    padding: 1rem clamp(1rem, 3vw, 2rem);
+    border: 4px solid var(--color-highlight);
+    border-radius: 10px;
+    background: linear-gradient(110deg, var(--color-primary), var(--color-secondary));
 }
 
 header h1 {
+    margin: 0;
+    color: var(--color-highlight);
     font-family: "Script1 Casual", cursive;
-    -webkit-text-stroke: 0.3px #0D0D0D;
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    line-height: 1.15;
+    text-shadow: 1px 1px 2px var(--color-background);
 }
 
 header nav ul {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
     list-style: none;
-    gap: 1.5em;
-    margin-right: 2em;
 }
 
 header nav ul li {
-    background-color: grey;
-    border: solid;
-    border-color: whitesmoke;
+    border: 1px solid var(--color-highlight);
     border-radius: 5px;
-    padding: 5px;
+    background-color: var(--color-secondary);
 }
 
 header nav ul a {
-    color: white;
+    display: block;
+    padding: 0.35rem 0.65rem;
+    color: var(--color-text);
+    font-weight: 700;
     text-decoration: none;
-    font-family: sans-serif;
 }
 
-header nav ul a:hover {
-    color: orange;
+header nav ul a:hover,
+header nav ul a:focus-visible {
+    color: var(--color-accent);
 }
 
 .content {
     display: flex;
     flex-direction: column;
-    font-family: sans-serif;
-    color: rgb(0, 0, 0);
+    gap: 1.5rem;
+    padding: 2rem 0;
+    text-shadow: 1px 1px 2px var(--color-background);
 }
 
-.content h1 {
-    color: #F2D230;
-    border: solid;
-    border-width: 10px;
-    border-color: #F2D230;
+.content > h1 {
+    align-self: center;
+    margin: 0;
+    padding: 0.75rem 1.5rem;
+    border: 6px solid var(--color-highlight);
+    border-radius: 1rem;
+    background: radial-gradient(circle, var(--color-highlight), var(--color-primary));
+    color: var(--color-highlight);
     font-family: "Script1 Casual", cursive;
+    font-size: clamp(1.75rem, 5vw, 2.75rem);
+    line-height: 1.2;
     text-align: center;
-    padding: 1em;
-    border-radius: 1em;
-    align-self: center;
-    background: radial-gradient(circle, lightgrey,rgb(243, 4, 16));
-    -webkit-text-stroke: 0.3px black;
+    text-shadow: 1px 1px 2px var(--color-background);
 }
-
-.content .get_in_touch {
-    align-self: center;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    max-width: 300px;
-    padding: 1em;
-    border-radius: 0.5em;
-    gap: 0.5em;
-    margin-top: 1.5em;
-}
-
-.get_in_touch input,
-.get_in_touch textarea {
-    padding: 0.5em;
-    border: 1px solid darkgray;
-    border-radius: 0.3em;
-    font-family: sans-serif;
-}
-
-.get_in_touch button {
-    padding: 0.5em;
-    background-color: rgb(1, 9, 85);
-    color: white;
-    border: none;
-    border-radius: 0.3em;
-    cursor: pointer;
-}
-
-.get_in_touch button:hover {
-    background-color: darkblue;
-}
-
-.content .login_box {
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    max-width: 300px;
-    padding: 1.5em;
-    border-radius: 0.5em;
-    gap: 0.5em;
-    margin: 1.5em auto 0;
-}
-
-.login_box input {
-    padding: 0.5em;
-    border: 1px solid darkgray;
-    border-radius: 0.3em;
-    font-family: sans-serif;
-}
-
-.login_box button {
-    padding: 0.5em;
-    background-color: rgb(1, 9, 85);
-    color: white;
-    border: none;
-    border-radius: 0.3em;
-    cursor: pointer;
-    margin-top: 0.5em;
-}
-
-.login_box button:hover {
-    background-color: darkblue;
-}
-
-.login_box[hidden] {
-    display: none;
-}
-
-.content .signup_box {
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    max-width: 300px;
-    padding: 1.5em;
-    border-radius: 0.5em;
-    gap: 0.5em;
-    margin: 1.5em auto 0;
-}
-
-.signup_box input {
-    padding: 0.5em;
-    border: 1px solid darkgray;
-    border-radius: 0.3em;
-    font-family: sans-serif;
-}
-
-.signup_box button {
-    padding: 0.5em;
-    background-color: rgb(1, 9, 85);
-    color: white;
-    border: none;
-    border-radius: 0.3em;
-    cursor: pointer;
-    margin-top: 0.5em;
-}
-
-.signup_box button:hover {
-    background-color: darkblue;
-}
-
-
 
 .listone {
-    background-color: rgba(217, 24, 40, 0.514);
-    border: 1px solid;
-    border-radius: 2px;
+    width: 100%;
+    padding: clamp(1rem, 3vw, 1.5rem);
+    border: 1px solid var(--color-accent);
+    border-radius: 4px;
+    background-color: rgb(217 24 40 / 90%);
     text-align: center;
+}
+
+.listone h3 {
+    margin-top: 0;
 }
 
 .listone ul {
-    list-style-position: inside;
-    padding-left: 0;
+    max-width: 700px;
+    margin: 0 auto;
+    padding-left: 1.5rem;
+    text-align: left;
 }
 
 .listone li {
-    color: black;
-    font-family: sans-serif;
-    text-align: center;
+    margin-block: 0.5rem;
+}
+
+.form-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: min(100%, 420px);
+    margin-inline: auto;
+    padding: clamp(1.25rem, 4vw, 2rem);
+    border-radius: 6px;
+    background-color: var(--color-card);
+    color: var(--color-card-text);
+    text-shadow: none;
+}
+
+.form-card label {
+    margin-top: 0.5rem;
+    font-weight: 700;
+}
+
+.form-card input,
+.form-card textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid var(--color-input-border);
+    border-radius: 4px;
+    font: inherit;
+}
+
+.form-card textarea {
+    resize: vertical;
+}
+
+.form-card button,
+.test_button button {
+    border: 0;
+    border-radius: 4px;
+    background-color: var(--color-button);
+    color: var(--color-text);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.form-card button {
+    margin-top: 0.75rem;
+    padding: 0.7rem 1rem;
+}
+
+.form-card button:hover,
+.form-card button:focus-visible,
+.test_button button:hover,
+.test_button button:focus-visible {
+    background-color: var(--color-button-hover);
+}
+
+.form-card[hidden] {
+    display: none;
 }
 
 .test_button {
+    padding-top: 1rem;
     text-align: center;
-    padding-top: 2em;
-}
-.test_button button {
-    padding: 0.5em;
-    background-color: rgb(1, 9, 85);
-    color: white;
-    border: 2px solid;
-    border-radius: 0.3em;
-    cursor: pointer;
-    border-color: rgb(72, 72, 73);
-    height: 100px;
-    width: 200px;
-    font-size: 1.5em;
 }
 
-.test_button button:hover {
-    color: grey;
+.test_button button {
+    width: min(100%, 300px);
+    min-height: 100px;
+    padding: 0.75rem;
+    font-size: 1.25rem;
 }
 
 .goodison_park {
     display: flex;
     justify-content: center;
-    margin-top: 1em;
+    margin-top: 1rem;
 }
 
-.goodison_park img {
-    border: 3px;
-    border-style:groove;
-    border-color: navy;
+.goodison_park img,
+.goodison_park iframe {
+    width: 100%;
+    max-width: 600px;
+    border: 3px groove var(--color-secondary);
     border-radius: 10px;
-    height: 300px;
-    width: 600px;
 }
 
 .content #saul_goodman {
-    height: 200px;
-    width: 400px;
-    border: 0.3em solid yellow;
-    border-radius: 0.75em;
+    width: min(100%, 400px);
+    height: auto;
+    align-self: center;
+    border: 0.3rem solid var(--color-accent);
+    border-radius: 0.75rem;
 }
 
 .already_logged_in {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 #alreadyLoggedInMessage {
-    display: flex;
-    background-color: hsl(0, 100%, 17.8%,0.66);
-    padding: 1em;
+    max-width: 100%;
+    margin: 0;
+    padding: 1rem;
+    border: 6px solid rgb(242 229 46 / 66%);
     border-radius: 12px;
-    border: solid 10px;
-    border-color: hsl(57.8, 100%, 32.7%,0.66);
-    justify-self: center;
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(91 0 0 / 66%);
+    color: var(--color-text);
+    font-size: clamp(1.25rem, 4vw, 2rem);
+}
+
+@media (max-width: 700px) {
+    body {
+        padding: 0.75rem;
+    }
+
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    header nav ul {
+        justify-content: center;
+    }
+
+    .content {
+        padding-block: 1.5rem;
+    }
 }
