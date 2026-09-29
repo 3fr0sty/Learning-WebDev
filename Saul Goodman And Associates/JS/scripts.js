@@ -66,31 +66,6 @@ if (signupForm) {
     });
 }
 
-// --- Login page: POST credentials to /login.html and show the server's response ---
-let loginForm = document.getElementById("loginForm");
-if (loginForm) {
-    loginForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-        let message = document.getElementById("loginMessage");
-
-        fetch("/login.html", {
-            method: "POST",
-            body: new FormData(loginForm)
-        })
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (data) {
-                message.textContent = data.message;
-                message.hidden = false;
-
-                if (data.success) {
-                    window.location.href = "index.html";
-                }
-            });
-    });
-}
-
 let signOutButtons = document.querySelectorAll("#signOut, #signOutAlreadyLoggedIn");
 signOutButtons.forEach(function (signOutButton) {
     signOutButton.addEventListener("click", function (event) {

@@ -26,7 +26,7 @@ def init_db():
 # Security Headers: only load scripts, styles, images from this origin, nothing else, and no inline scripts
 @app.after_request
 def add_security_headers(response):
-    response.headers["Content-Security-Policy"] = "default-src 'self'; frame-src https://www.youtube.com/ "
+    response.headers["Content-Security-Policy"] = "default-src 'self'; script-src 'self' https://unpkg.com 'unsafe-eval'; frame-src https://www.youtube.com/ "
     return response
 
 
@@ -93,6 +93,21 @@ def whoami():
 
 # --- Signup: inserts a new user, and handles the case where the username is taken ---
 
+def checkPass(password):
+    # Check if the password meets the requirements
+    if len(password) < 8:
+        return False, "Password must be at least 8 characters long"
+    if not any(char.isdigit() for char in password):
+        return False, "Password must contain at least one number"
+    if not any(char.isupper() for char in password):
+        return False, "Password must contain at least one uppercase letter"
+    if not any(char.islower() for char in password):
+        return False, "Password must contain at least one lowercase letter"
+    if not any(char in "!@#$%^&*()-_=+[{]}\|;:'\",<.>/?`~" for char in password):
+        return False, "Password must contain at least one special character"
+    return True, ""
+
+
 @app.route("/signup.html",methods=["POST"])
 def signup():
     username = request.form.get("username")
@@ -100,6 +115,9 @@ def signup():
 
     if not username or not password:
         return jsonify({"success": False, "message": "Username and password are required"}),400
+
+    if checkPass(password)[0] == False:
+        return jsonify({"success": False, "message": checkPass(password)[1]}),400
 
     hashedPassword = generate_password_hash(password)
 
