@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, session
+from flask import Flask, request, jsonify, session, redirect
 import sqlite3
 from pathlib import Path
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -26,7 +26,7 @@ def init_db():
 # Security Headers: only load scripts, styles, images from this origin, nothing else, and no inline scripts
 @app.after_request
 def add_security_headers(response):
-    response.headers["Content-Security-Policy"] = "default-src 'self'; script-src 'self' https://unpkg.com 'unsafe-eval'; frame-src https://www.youtube.com/ "
+    response.headers["Content-Security-Policy"] = "default-src 'self'; script-src 'self' https://unpkg.com 'unsafe-eval'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com"
     return response
 
 
@@ -138,6 +138,14 @@ def signup():
 def signOut():
     session.pop("username", None)
     return jsonify({"sign_out_success": True})
+
+@app.route("/workout.html")
+def workout():
+    if not session.get("username"):
+        return redirect("/")
+    return app.send_static_file("HTML/workout.html")
+
+
 
 if __name__== "__main__":
     init_db()  # make sure the table exists before the server starts accepting requests

@@ -1,23 +1,18 @@
-@font-face {
-    font-family: "Script1 Casual";
-    src: url("../fonts/script1-script-casual-normal.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
 :root {
-    --color-primary: #d9183b;
-    --color-secondary: #73192a;
-    --color-accent: #f2e52e;
-    --color-highlight: #f2d230;
-    --color-background: #0d0d0d;
+    --color-primary: #02447d;
+    --color-secondary: #161d2c;
+    --color-accent: #4d80c6;
+    --color-highlight: #4d80c6;
+    --color-background: #07090f;
     --color-text: #ffffff;
-    --color-card: #ffffff;
+    --color-card: #cfcdc4;
     --color-card-text: #000000;
     --color-input-border: #5a5a5a;
     --color-button: var(--color-secondary);
     --color-button-hover: var(--color-primary);
-    --color-overlay: rgb(13 13 13 / 85%);
+    --color-overlay: rgb(7 9 15 / 88%);
     --content-width: 900px;
     --page-padding: clamp(1rem, 3vw, 2rem);
 }
@@ -42,7 +37,7 @@ body {
     background-size: cover;
     background-attachment: fixed;
     color: var(--color-text);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
     line-height: 1.6;
 }
 
@@ -78,7 +73,7 @@ header {
 header h1 {
     margin: 0;
     color: var(--color-highlight);
-    font-family: "Script1 Casual", cursive;
+    font-family: "Futura Display", "Futura", "Poppins", sans-serif;
     font-size: clamp(1.5rem, 4vw, 2.25rem);
     line-height: 1.15;
     text-shadow: 1px 1px 2px var(--color-background);
@@ -128,8 +123,8 @@ header nav ul a:focus-visible {
     border: 6px solid var(--color-highlight);
     border-radius: 1rem;
     background: radial-gradient(circle, var(--color-highlight), var(--color-primary));
-    color: var(--color-highlight);
-    font-family: "Script1 Casual", cursive;
+    color: var(--color-text);
+    font-family: "Futura Display", "Futura", "Poppins", sans-serif;
     font-size: clamp(1.75rem, 5vw, 2.75rem);
     line-height: 1.2;
     text-align: center;
@@ -141,7 +136,7 @@ header nav ul a:focus-visible {
     padding: clamp(1rem, 3vw, 1.5rem);
     border: 1px solid var(--color-accent);
     border-radius: 4px;
-    background-color: rgb(217 24 40 / 90%);
+    background-color: rgb(22 29 44 / 92%);
     text-align: center;
 }
 
@@ -236,20 +231,11 @@ header nav ul a:focus-visible {
     margin-top: 1rem;
 }
 
-.goodison_park img,
-.goodison_park iframe {
+.goodison_park video {
     width: 100%;
     max-width: 600px;
     border: 3px groove var(--color-secondary);
     border-radius: 10px;
-}
-
-.content #saul_goodman {
-    width: min(100%, 400px);
-    height: auto;
-    align-self: center;
-    border: 0.3rem solid var(--color-accent);
-    border-radius: 0.75rem;
 }
 
 .already_logged_in {
@@ -263,9 +249,9 @@ header nav ul a:focus-visible {
     max-width: 100%;
     margin: 0;
     padding: 1rem;
-    border: 6px solid rgb(242 229 46 / 66%);
+    border: 6px solid rgb(77 128 198 / 66%);
     border-radius: 12px;
-    background-color: rgb(91 0 0 / 66%);
+    background-color: rgb(22 29 44 / 85%);
     color: var(--color-text);
     font-size: clamp(1.25rem, 4vw, 2rem);
 }
@@ -290,3 +276,15 @@ header nav ul a:focus-visible {
 }
 
 
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+}
+
+.brand img {
+    height: clamp(2.5rem, 6vw, 3.5rem);
+    width: auto;
+}

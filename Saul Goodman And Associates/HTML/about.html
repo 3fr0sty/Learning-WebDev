@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Saul Goodman &amp; Associates - About</title>
+        <title>ToKa Fitness - About</title>
         <meta name="viewport" content="width=device-width">
         <meta charset="UTF-8">
-        <meta name="description" content="Official Website of Saul Goodman & Associates">
-        <meta name="keywords" content="Saul Goodman, Legal Services, Jimmy McGill">
+        <meta name="description" content="ToKa Fitness">
+        <meta name="keywords" content="ToKa, Fitness, Calorie Tracker">
         <link rel="stylesheet" href="../CSS/styles.css">
     </head>
-    <div class = "nav-box" id = "skillmcgill"></div>
     <body>
         <header>
-            <h1>Saul Goodman &amp; Associates - About</h1>
-            <nav>
+            <a class="brand" href="index.html"><img src="../images/ToKa Fitness Logo.svg" alt=""><h1>ToKa Fitness</h1></a>
+            <nav id="navbar">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li v-if="username"><a href="workout.html">Workouts</a></li>
                     <li id="signupItem"><a href="signup.html">Signup</a></li>
                     <li><a href="login.html" id="loginLink">Login</a></li>
                     <li id="signOutItem" hidden><a href="index.html" id="signOut">Sign Out</a></li>
@@ -26,21 +26,22 @@
         <div class="content">
             <h1>About</h1>
             <div class="listone">
-            <h3>About Me</h3>
-            <img id="saul_goodman" src="../images/jamesMcgill.jpg" alt="me">
+            <h3>About ToKa Fitness</h3>
             <ul>
-                <li>My real name is James M. Mcgill, brother of Charles McGill.</li>
-                <li>I am an honest-to-god attorny who always fights for his clients, no matter what it takes.</li>
-                <li>Ask any one of clients, and they'll tell you I offer the best legal services in all of Alberquerque!</li>
+                <li>ToKa Fitness helps you log workouts, track calories, and feel good.</li>
+                <li>Train smarter. Eat better. Live stronger.</li>
+                <li>Our tools are free, simple, and built to keep your data secure.</li>
             </ul>
             </div>
         </div>
         <div class="test_button">
-            <button id="testButton" value="EVERTON">Click me!</button>
+            <button id="testButton" value="TOKA">Click me!</button>
         </div>
         <div class="goodison_park">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/iId5WDsYxZ4?si=1RqoDfCVT7QhM0bt" hidden id="goodison" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <video id="goodison" src="../videos/gemini_generated_video_5c9b41ef.mp4" controls hidden></video>
         </div>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="../JS/workouts.js"></script>
         <script src="../JS/scripts.js"></script>
     </body>
 </html>

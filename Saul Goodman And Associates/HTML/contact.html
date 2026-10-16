@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Saul Goodman &amp; Associates - Contact</title>
+        <title>ToKa Fitness - Contact</title>
         <meta name="viewport" content="width=device-width">
         <meta charset="UTF-8">
-        <meta name="description" content="Official Website of Saul Goodman & Associates">
-        <meta name="keywords" content="Saul Goodman, Legal Services, Jimmy McGill">
+        <meta name="description" content="ToKa Fitness">
+        <meta name="keywords" content="ToKa, Fitness, Calorie Tracker">
         <link rel="stylesheet" href="../CSS/styles.css">
     </head>
     <body>
         <header>
-            <h1>Saul Goodman &amp; Associates - Contact</h1>
-            <nav>
+            <a class="brand" href="index.html"><img src="../images/ToKa Fitness Logo.svg" alt=""><h1>ToKa Fitness</h1></a>
+            <nav id="navbar"> 
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li v-if="username"><a href="workout.html">Workouts</a></li>
                     <li id="signupItem"><a href="signup.html">Signup</a></li>
                     <li><a href="login.html" id="loginLink">Login</a></li>
                     <li id="signOutItem" hidden><a href="index.html" id="signOut">Sign Out</a></li>
@@ -27,8 +28,8 @@
             <div class="listone">
                 <h3>Get in touch</h3>
                 <ul>
-                    <li>Email: jamesmcgill@hhmlegal.com</li>
-                    <li>Feel free to reach out for a FREE CONSULTATION!.</li>
+                    <li>Email: hello@tokafitness.com</li>
+                    <li>Questions about workouts, tracking or your account? Get in touch and we will help.</li>
                 </ul>
             </div>
             <form id="contactForm" class="get_in_touch form-card">
@@ -45,6 +46,8 @@
                 <p id="formMessage" hidden></p>
             </form>
         </div>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="../JS/workouts.js"></script>
         <script src="../JS/scripts.js"></script>
     </body>
 </html>

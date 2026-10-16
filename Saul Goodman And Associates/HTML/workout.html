@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ToKa Fitness - Workouts</title>
+        <meta name="viewport" content="width=device-width">
+        <meta charset="UTF-8">
+        <meta name="description" content="ToKa Fitness">
+        <meta name="keywords" content="ToKa, Fitness, Calorie Tracker">
+        <link rel="stylesheet" href="../CSS/styles.css">
+    </head>
+    <body>
+        <header>
+            <a class="brand" href="index.html"><img src="../images/ToKa Fitness Logo.svg" alt=""><h1>ToKa Fitness</h1></a>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li v-if="username" ><a href="workout.html">Workouts</a></li>
+                    <li id="signupItem"><a href="signup.html">Signup</a></li>
+                    <li><a href="login.html" id="loginLink">Login</a></li>
+                    <li id="signOutItem" hidden><a href="index.html" id="signOut">Sign Out</a></li>
+                </ul>
+            </nav>
+        </div>
+        </header>
+        <div class="content">
+            <h1>Workouts</h1>
+            <div class="listone">
+                <h3>List of workouts</h3>
+                <ul>
+                    <li v-for="workout in workoutList">{{ workout }}</li>
+                </ul>
+            </div>
+        </div>
+        <script src="../JS/scripts.js"></script>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="../JS/workouts.js"></script>
+    </body>
+</html>

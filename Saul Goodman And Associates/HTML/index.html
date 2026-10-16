@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Saul Goodman &amp; Associates - Home</title>
+        <title>ToKa Fitness - Home</title>
         <meta name="viewport" content="width=device-width">
         <meta charset="UTF-8">
-        <meta name="description" content="Official Website of Saul Goodman & Associates">
-        <meta name="keywords" content="Saul Goodman, Legal Services, Jimmy McGill">
+        <meta name="description" content="ToKa Fitness">
+        <meta name="keywords" content="ToKa, Fitness, Calorie Tracker">
         <link rel="stylesheet" href="../CSS/styles.css">
     </head>
     <body>
         <header>
-            <h1>Saul Goodman &amp; Associates - Home</h1>
-            <nav>
+            <a class="brand" href="index.html"><img src="../images/ToKa Fitness Logo.svg" alt=""><h1>ToKa Fitness</h1></a>
+            <nav id="navbar">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li v-if="username"><a href="workout.html">Workouts</a></li>
                     <li id="signupItem"><a href="signup.html">Signup</a></li>
                     <li><a href="login.html" id="loginLink">Login</a></li>
                     <li id="signOutItem" hidden><a href="index.html" id="signOut">Sign Out</a></li>
@@ -28,13 +29,14 @@
             <h3>Who am I?</h3>
             <h4 id="welcomeMessage" hidden></h4>
             <ul>
-                <li>My name is Saul Goodman. Did you know you have rights?</li>
-                <li>The constitution says you do, and so do I!</li>
-                <li>I believe that until proven guilty, every man and woman in the country are innocent.</li>
-                <li>And thats why i fight for you Alberquerque!</li>
+                <li>Welcome to the official website of ToKa fitness</li>
+                <li>Our site allows you to log workouts, track calories, and most importantly, feel good.</li>
+                <li>Registration is free and secure, check it out!</li>
             </ul>
             </div>
         </div>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="../JS/workouts.js"></script>
         <script src="../JS/scripts.js"></script>
     </body>
 </html>

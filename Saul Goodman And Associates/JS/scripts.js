@@ -1,13 +1,14 @@
 console.log("Javascript is working!");
 
-// --- About page: toggle the hidden image when the test button is clicked ---
+// --- About page: toggle the hidden video when the test button is clicked ---
 let button = document.getElementById("testButton");
 if (button) {
     button.addEventListener("click", function () {
-        let buttonValue = button.value;
-        console.log(buttonValue + " button was clicked!");
-        let image = document.getElementById("goodison");
-        image.hidden = !image.hidden;
+        let video = document.getElementById("goodison");
+        video.hidden = !video.hidden;
+        if (video.hidden) {
+            video.pause();
+        }
     });
 }
 
