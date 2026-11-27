@@ -149,6 +149,12 @@ def workout():
         return redirect("/")
     return app.send_static_file("HTML/workout.html")
 
+@app.route("/checkout.html")
+def checkout():
+    membership_type = request.args.get("membership")
+    return jsonify({"membershipType" : membership_type})
+
+
 
 
 if __name__== "__main__":
