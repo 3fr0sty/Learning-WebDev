@@ -1,0 +1,137 @@
+:root {
+    --color-lime: #05c200;
+    --color-green: #208f1d;
+    --color-forest: #275c25;
+    --color-deep-forest: #1f331f;
+    --color-charcoal-green: #293329;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--color-deep-forest);
+    color: var(--color-charcoal-green);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-page {
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, var(--color-deep-forest), var(--color-forest));
+}
+
+.login-card {
+    width: min(100%, 26rem);
+    padding: 2.5rem;
+    box-sizing: border-box;
+    background-color: whitesmoke;
+    border-top: 0.4rem solid var(--color-lime);
+    box-shadow: 0 1rem 2rem rgb(0 0 0 / 25%);
+}
+
+.eyebrow {
+    margin: 0 0 0.5rem;
+    color: var(--color-green);
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 0.12rem;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 0;
+    color: var(--color-deep-forest);
+    font-size: 2rem;
+}
+
+.intro {
+    margin: 0.75rem 0 2rem;
+    color: #536053;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.45rem;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.8rem;
+    box-sizing: border-box;
+    border: 1px solid #a8b2a8;
+    border-radius: 0.25rem;
+    background-color: white;
+    color: var(--color-charcoal-green);
+    font: inherit;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: var(--color-green);
+    outline: 3px solid rgb(5 194 0 / 20%);
+}
+
+.form-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0.25rem 0 1.5rem;
+    font-size: 0.875rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 0;
+    font-weight: normal;
+}
+
+.checkbox-label input {
+    accent-color: var(--color-green);
+}
+
+a {
+    color: var(--color-green);
+    font-weight: bold;
+}
+
+button {
+    width: 100%;
+    padding: 0.85rem;
+    border: 0;
+    border-radius: 0.25rem;
+    background-color: var(--color-green);
+    color: white;
+    cursor: pointer;
+    font: inherit;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: var(--color-forest);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 3px solid var(--color-lime);
+    outline-offset: 2px;
+}
+
+.signup-prompt {
+    margin: 1.75rem 0 0;
+    color: #536053;
+    font-size: 0.875rem;
+    text-align: center;
+}

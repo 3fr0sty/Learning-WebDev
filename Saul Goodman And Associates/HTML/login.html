@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ToKa Fitness - Login</title>
+        <meta name="viewport" content="width=device-width">
+        <meta charset="UTF-8">
+        <meta name="description" content="ToKa Fitness">
+        <meta name="keywords" content="ToKa, Fitness, Calorie Tracker">
+        <link rel="stylesheet" href="../CSS/styles.css">
+    </head>
+    <body>
+        <header>
+            <a class="brand" href="index.html"><img src="../images/ToKa Fitness Logo.svg" alt=""><h1>ToKa Fitness</h1></a>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="memberships.html">Memberships</a></li>
+                    <li v-if="username"><a href="workout.html">Workouts</a></li>
+                    <li id="signupItem"><a href="signup.html">Signup</a></li>
+                    <li><a href="login.html" id="loginLink">Login</a></li>
+                    <li id="signOutItem" hidden><a href="index.html" id="signOut">Sign Out</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="loginApp" class="content">
+            <h1>Login</h1>
+            <form class="login_box form-card" @submit.prevent="login">
+                <label for="username">Username</label>
+                <input v-model="username" type="text" id="username" name="username" placeholder="Your username">
+
+                <label for="password">Password</label>
+                <input v-model="password" type="password" id="password" name="password" placeholder="Your password">
+
+                <button type="submit">Log In</button>
+                <p v-if="message">{{ message }}</p>
+            </form>
+        </div>
+        <div class="already_logged_in">
+            <h1 id="alreadyLoggedInMessage"></h1>
+            <p><a href="/signout" id="signOutAlreadyLoggedIn">Sign Out</a></p>
+        </div>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="../JS/login.js"></script>
+        <script src="../JS/workouts.js"></script>
+    </body>
+</html>

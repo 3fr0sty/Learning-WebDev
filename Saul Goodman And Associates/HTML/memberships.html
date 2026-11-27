@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ToKa Fitness - Memberships</title>
+        <meta name="viewport" content="width=device-width">
+        <meta charset="UTF-8">
+        <meta name="description" content="ToKa Fitness">
+        <meta name="keywords" content="ToKa, Fitness, Calorie Tracker">
+        <link rel="stylesheet" href="../CSS/styles.css">
+    </head>
+    <body>
+        <header>
+            <a class="brand" href="index.html"><img src="../images/ToKa Fitness Logo.svg" alt=""><h1>ToKa Fitness</h1></a>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="memberships.html">Memberships</a></li>
+                    <li v-if="username"><a href="workout.html">Workouts</a></li>
+                    <li id="signupItem"><a href="signup.html">Signup</a></li>
+                    <li><a href="login.html" id="loginLink">Login</a></li>
+                    <li id="signOutItem" hidden><a href="index.html" id="signOut">Sign Out</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="content">
+            <h1>Memberships</h1>
+            <div class="membership_options">
+                <div class="membership_plan">
+                    <div class="card1">
+                        <h3>Basic</h3>
+                        <h4>£24.99/m</h4>
+                        <h5>Includes:</h5>
+                        <ul>
+                            <li>Off-peak times only</li>
+                            <li>Access to gym area</li>
+                            <li>Good for average gym-goers</li>
+                        </ul>
+                    </div>
+                    <p id="button1"><a href="checkout.html?membership=basic">Join Basic</a></p>
+                </div>
+                <div class="membership_plan">
+                    <div class="card2">
+                        <h3>Gold</h3>
+                        <h4>£34.99/m</h4>
+                        <h5>Includes:</h5>
+                        <ul>
+                            <li>Peak and Off-peak</li>
+                            <li>Access to gym & spa area</li>
+                            <li>Perfect for true wellness</li>
+                        </ul>
+                    </div>
+                    <p id="button2"><a href="checkout.html?membership=gold">Join Gold</a></p>
+                </div>
+                <div class="membership_plan">
+                    <div class="card3">
+                        <h3>Platinum</h3>
+                        <h4>£49.99/m</h4>
+                        <h5>Includes:</h5>
+                        <ul>
+                            <li>All of the benefits of Gold</li>
+                            <li>Exclusive car parking</li>
+                            <li>20% off food & drink from the lounge</li>
+                        </ul>
+                    </div>
+                    <p id="button3"><a href="checkout.html?membership=platinum">Join Platinum</a></p>
+                </div>
+            </div>
+        </div>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="../JS/workouts.js"></script>
+        <script src="../JS/scripts.js"></script>
+    </body>
+</html>

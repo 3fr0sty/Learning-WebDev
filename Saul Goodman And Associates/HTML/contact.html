@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ToKa Fitness - Contact</title>
+        <meta name="viewport" content="width=device-width">
+        <meta charset="UTF-8">
+        <meta name="description" content="ToKa Fitness">
+        <meta name="keywords" content="ToKa, Fitness, Calorie Tracker">
+        <link rel="stylesheet" href="../CSS/styles.css">
+    </head>
+    <body>
+        <header>
+            <a class="brand" href="index.html"><img src="../images/ToKa Fitness Logo.svg" alt=""><h1>ToKa Fitness</h1></a>
+            <nav id="navbar"> 
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="memberships.html">Memberships</a></li>
+                    <li v-if="username"><a href="workout.html">Workouts</a></li>
+                    <li id="signupItem"><a href="signup.html">Signup</a></li>
+                    <li><a href="login.html" id="loginLink">Login</a></li>
+                    <li id="signOutItem" hidden><a href="index.html" id="signOut">Sign Out</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="content">
+            <h1>Contact</h1>
+            <div class="listone">
+                <h3>Get in touch</h3>
+                <ul>
+                    <li>Email: hello@tokafitness.com</li>
+                    <li>Questions about workouts, tracking or your account? Get in touch and we will help.</li>
+                </ul>
+            </div>
+            <form id="contactForm" class="get_in_touch form-card">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name">
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com">
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Your message"></textarea>
+
+                <button type="submit">Send</button>
+                <p id="formMessage" hidden></p>
+            </form>
+        </div>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="../JS/workouts.js"></script>
+        <script src="../JS/scripts.js"></script>
+    </body>
+</html>

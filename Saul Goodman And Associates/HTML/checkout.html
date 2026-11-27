@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ToKa Fitness - Checkout</title>
+        <meta name="viewport" content="width=device-width">
+        <meta charset="UTF-8">
+        <meta name="description" content="Choose a ToKa Fitness membership and continue to secure checkout.">
+        <link rel="stylesheet" href="../CSS/styles.css">
+    </head>
+    <body>
+        <main class="content checkout-page">
+            <h1>Checkout</h1>
+            <p class="checkout-intro">Choose your membership and enter your contact details to continue.</p>
+            <form class="form-card checkout-form" action="/create-checkout-session" method="POST">
+                <label for="membership">Membership</label>
+                <select id="membership" name="membership" required>
+                    <option value="" selected disabled>Choose a membership</option>
+                    <option value="basic">Basic - £24.99/month</option>
+                    <option value="gold">Gold - £34.99/month</option>
+                    <option value="platinum">Platinum - £49.99/month</option>
+                </select>
+
+                <label for="customerName">Full name</label>
+                <input type="text" id="customerName" name="customerName" autocomplete="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+
+                <p class="checkout-note">Payment details will be entered on the secure payment provider's page.</p>
+                <button type="submit">Continue to secure payment</button>
+            </form>
+            <p class="checkout-back"><a href="memberships.html">Back to memberships</a></p>
+        </main>
+    </body>
+</html>

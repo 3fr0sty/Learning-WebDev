@@ -1,0 +1,127 @@
+console.log("Javascript is working!");
+
+// --- About page: toggle the hidden video when the test button is clicked ---
+let button = document.getElementById("testButton");
+if (button) {
+    button.addEventListener("click", function () {
+        let video = document.getElementById("goodison");
+        video.hidden = !video.hidden;
+        if (video.hidden) {
+            video.pause();
+        }
+    });
+}
+
+// --- Contact page: show a thank-you message on submit (no backend call yet) ---
+let form = document.getElementById("contactForm");
+if (form) {
+    let message = document.getElementById("formMessage");
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        fetch("/whoami")
+            .then(function (response){ 
+                return response.json()
+            })
+            .then(function (data){
+                let typedName = document.getElementById("name").value;
+                let displayName;
+
+                if (data.logged_in_as) {
+                    displayName = data.logged_in_as;
+                } else {
+                    displayName = typedName;
+                }
+
+        message.textContent = "Thank you " + displayName;
+        message.hidden = false;
+    });
+});
+};
+// --- Signup page: check passwords match client-side, then POST to /signup.html ---
+let signupForm = document.getElementById("signupForm");
+if (signupForm) {
+    signupForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        let password = document.getElementById("password").value;
+        let confPassword = document.getElementById("confPassword").value;
+        let message = document.getElementById("signupMessage");
+
+        if (password !== confPassword) {
+            message.textContent = "Passwords do not match.";
+            message.hidden = false;
+            return;
+        }
+
+        fetch("/signup.html", {
+            method: "POST",
+            body: new FormData(signupForm)
+        })
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                message.textContent = data.message;
+                message.hidden = false;
+                
+            });
+    });
+}
+
+let signOutButtons = document.querySelectorAll("#signOut, #signOutAlreadyLoggedIn");
+signOutButtons.forEach(function (signOutButton) {
+    signOutButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        fetch("/signout")
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                if (data.sign_out_success) {
+                    window.location.href = "index.html";
+                }
+            });
+    });
+});
+
+let loginLink = document.getElementById("loginLink");
+let signupItem = document.getElementById("signupItem");
+let welcomeMessage = document.getElementById("welcomeMessage");
+if (loginLink) {
+    fetch("/whoami")
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            if (data.logged_in_as) {
+                let user = data.logged_in_as;
+                loginLink.textContent = "Logged in as " + user;
+                let signOutItem = document.getElementById("signOutItem");
+                if (signOutItem) {
+                    signOutItem.hidden = false;
+                }
+                if (signupItem) {
+                    signupItem.hidden = true;
+                }
+                if (welcomeMessage) {
+                    welcomeMessage.textContent = "Welcome, " + user;
+                    welcomeMessage.hidden = false;
+                }
+            }
+        });
+}
+
+let alreadyLoggedInMessage = document.getElementById("alreadyLoggedInMessage");
+if (alreadyLoggedInMessage) {
+    fetch("/whoami")
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function(data) {
+            if (data.logged_in_as) {
+                let user = data.logged_in_as;
+                alreadyLoggedInMessage.textContent = "You are already logged in as " + user;
+                alreadyLoggedInMessage.hidden = false;
+                document.getElementById("loginForm").hidden = true;
+            }
+        })
+};
