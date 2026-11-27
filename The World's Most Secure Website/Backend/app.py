@@ -1,9 +1,13 @@
 from flask import Flask, request, jsonify, session
 import sqlite3
 from pathlib import Path
+import db
 
 project_root = Path(__file__).resolve().parent.parent
 app = Flask(__name__, static_folder=project_root, static_url_path="")
+
+db.init_db()
+db.ls_users()
 
 @app.route("/")
 def index():

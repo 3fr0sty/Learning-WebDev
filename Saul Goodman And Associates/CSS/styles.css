@@ -32,7 +32,6 @@ body {
     margin: 0;
     padding: var(--page-padding);
     background-color: var(--color-background);
-    background-image: url("../images/saulGoodmanAndAssociates.jpg");
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -287,4 +286,18 @@ header nav ul a:focus-visible {
 .brand img {
     height: clamp(2.5rem, 6vw, 3.5rem);
     width: auto;
+}
+
+.membership_options {
+    display: flex;
+    justify-content: space-between;
+    gap: 3em;
+    margin: auto;
+}
+
+.card1, .card2, .card3 {
+    border: 4px solid var(--color-highlight);
+    border-radius: 10px;
+    background-color: var(--color-secondary);
+    padding: 1.5em;
 }

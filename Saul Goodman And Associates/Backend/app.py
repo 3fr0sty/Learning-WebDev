@@ -86,6 +86,10 @@ def login():
 def signupPage():
     return app.send_static_file("HTML/signup.html")
 
+@app.route("/memberships.html")
+def membershipsPage():
+    return app.send_static_file("HTML/memberships.html")
+
 @app.route("/whoami")
 def whoami():
     username = session.get("username")
@@ -103,7 +107,7 @@ def checkPass(password):
         return False, "Password must contain at least one uppercase letter"
     if not any(char.islower() for char in password):
         return False, "Password must contain at least one lowercase letter"
-    if not any(char in "!@#$%^&*()-_=+[{]}\|;:'\",<.>/?`~" for char in password):
+    if not any(char in r"!@#$%^&*()-_=+[{]}\|;:'\",<.>/?`~" for char in password):
         return False, "Password must contain at least one special character"
     return True, ""
 
